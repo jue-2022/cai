@@ -1,0 +1,49 @@
+{
+  "topics": [
+    {
+      "id": "topic1",
+      "name": "痛风与高尿酸血症的免疫炎症机制",
+      "progress": "样本收集中，细胞实验进行中",
+      "person_in_charge": "张三",
+      "start_time": "2025年",
+      "next_plan": "完成样本收集，开展机制验证",
+      "data_spec": "• 文件按 日期_样本编号_实验类型 命名<br>            • 每周五备份至课题组云盘<br>            • 临床数据严格加密，禁止外泄"
+    },
+    {
+      "id": "topic2",
+      "name": "类风湿关节炎免疫调控研究",
+      "progress": "动物模型构建完成，待检测",
+      "person_in_charge": "李四",
+      "start_time": "2025年",
+      "next_plan": "完成检测数据分析，开始药物干预实验",
+      "data_spec": "• 按动物/细胞数据分类存储<br>            • 每日备份实验数据<br>            • 绑定动物编号，避免混淆"
+    },
+    {
+      "id": "topic3",
+      "name": "单细胞多组学分析",
+      "progress": "数据已下机，正在分析",
+      "person_in_charge": "王五",
+      "start_time": "2025年",
+      "next_plan": "完成数据分析，准备初稿撰写",
+      "data_spec": "• 原始数据/结果/脚本分文件夹存储<br>            • 数据下机后立即双备份<br>            • 注释脚本版本和参数"
+    },
+    {
+      "id": "topic4",
+      "name": "天然免疫与炎症信号通路",
+      "progress": "Western 实验验证中",
+      "person_in_charge": "赵六",
+      "start_time": "2025年",
+      "next_plan": "完成WB验证，开始信号通路机制探究",
+      "data_spec": "• 原始图片禁止修改<br>            • 24小时内备份实验数据<br>            • 保留至少3次重复原始数据"
+    },
+    {
+      "id": "topic5",
+      "name": "临床转化与药物靶点研究",
+      "progress": "小分子筛选进行中",
+      "person_in_charge": "钱七",
+      "start_time": "2025年",
+      "next_plan": "完成筛选，验证候选药物效果",
+      "data_spec": "• 记录药物浓度和抑制率<br>            • 每周备份筛选数据<br>            • 标注药物信息，避免混淆"
+    }
+  ]
+}
