@@ -123,7 +123,7 @@ class ProjectUpdater:
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>课题总览</title>
+<title>抗MDA5+皮肌炎免疫致病机制研究</title>
 <style>
     *{{margin:0;padding:0;box-sizing:border-box;font-family:Microsoft YaHei}}
     body{{background:#f5f7fa}}
@@ -134,7 +134,7 @@ class ProjectUpdater:
 </style>
 </head>
 <body>
-<header><h2>蔡月明课题组 - 课题总览</h2></header>
+<header><h2>抗MDA5+皮肌炎免疫致病机制研究</h2></header>
 <div class="container">
 {items_html.rstrip()}
 </div>
@@ -144,6 +144,24 @@ class ProjectUpdater:
     
     def generate_topic_html(self, topic):
         """生成单个课题详情页内容"""
+        # 为第一个课题（皮肌炎）添加特殊处理，包含网盘链接
+        if topic["id"] == "topic1":
+            extra_content = f'''
+        <div class="line"><span class="label">研究内容：</span>{topic.get("research_content", "")}</div>
+
+        <div class="line" style="margin-top:20px">
+            <span class="label">细胞Marker库：</span>
+            <a href="{topic.get("cell_marker_link", "")}" target="_blank" class="link">点击打开网盘（提取码：ame9）</a>
+        </div>
+
+        <div class="line">
+            <span class="label">课题参考文献：</span>
+            <a href="{topic.get("literature_link", "")}" target="_blank" class="link">点击打开网盘（提取码：qjdp）</a>
+        </div>
+ '''
+        else:
+            extra_content = ""
+        
         html_content = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -161,6 +179,7 @@ class ProjectUpdater:
     .line{{margin:10px 0;font-size:15px}}
     .label{{font-weight:bold;width:100px;display:inline-block}}
     .notes{{background:#eef6ff;padding:12px 15px;border-radius:6px;margin-top:15px;font-size:14px}}
+    .link{{color:#004080;font-weight:bold;text-decoration:underline}}
 </style>
 </head>
 <body>
@@ -172,6 +191,7 @@ class ProjectUpdater:
         <div class="line"><span class="label">当前进度：</span>{topic["progress"]}</div>
         <div class="line"><span class="label">负责人：</span>{topic["person_in_charge"]}</div>
         <div class="line"><span class="label">开始时间：</span>{topic["start_time"]}</div>
+{extra_content}
         <div class="line"><span class="label">下一步计划：</span>{topic["next_plan"]}</div>
         <div class="notes">
             <strong>数据规范 & 注意事项：</strong><br>

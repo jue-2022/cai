@@ -2,12 +2,15 @@
   "topics": [
     {
       "id": "topic1",
-      "name": "皮肌炎的免疫发病机制研究",
-      "progress": "患者样本收集完成，正在进行免疫细胞分型",
-      "person_in_charge": "任恒璞",
+      "name": "抗MDA5+皮肌炎免疫致病机制研究",
+      "progress": "课题设计完成，准备开展样本实验",
+      "person_in_charge": "蔡月明课题组",
       "start_time": "2025年",
-      "next_plan": "完成免疫细胞分析，探究关键通路分子",
-      "data_spec": "• 文件按 日期_患者编号_检测类型 命名<br>            • 每周三备份至课题组云盘<br>            • 患者临床信息匿名化处理，严格保密"
+      "research_content": "围绕抗MDA5+皮肌炎相关间质性肺病，解析免疫细胞失衡、单核-巨噬细胞动态转化及干扰素信号通路异常，挖掘诊疗标志物。",
+      "cell_marker_link": "https://pan.baidu.com/s/183EB-VMgmspOj_NOog3lBQ",
+      "literature_link": "https://pan.baidu.com/s/1bNwFLGickvwNl-JNGTrxEg?pwd=qjdp",
+      "next_plan": "建立临床队列，开展流式细胞分型与单细胞测序分析",
+      "data_spec": "• 细胞分型严格参照网盘Marker标准<br>            • 临床样本严格保密、去标识化使用<br>            • 课题研究统一依据文献库进展"
     },
     {
       "id": "topic2",
