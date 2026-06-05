@@ -11,7 +11,6 @@ class ProjectUpdater:
     def __init__(self):
         self.data_file = "topics_data.json"
         self.index_file = "index.html"
-        self.topic_files = ["topic1.html", "topic2.html", "topic3.html", "topic4.html", "topic5.html"]
         self.backup_dir = "backups"
         
     def create_backup(self):
@@ -23,7 +22,11 @@ class ProjectUpdater:
         backup_filename = f"backup_{timestamp}"
         
         # 备份HTML文件
-        all_html_files = [self.index_file] + self.topic_files
+        topic_files = [
+            filename for filename in os.listdir(".")
+            if filename.startswith("topic") and filename.endswith(".html")
+        ]
+        all_html_files = [self.index_file] + topic_files
         for filename in all_html_files:
             if os.path.exists(filename):
                 with open(filename, 'r', encoding='utf-8') as f:
@@ -41,48 +44,27 @@ class ProjectUpdater:
             "topics": [
                 {
                     "id": "topic1",
-                    "name": "皮肌炎的免疫发病机制研究",
-                    "progress": "患者样本收集完成，正在进行免疫细胞分型",
-                    "person_in_charge": "张三",
+                    "name": "抗MDA5+皮肌炎免疫致病机制研究",
+                    "progress": "课题设计完成，准备开展样本实验",
+                    "person_in_charge": "蔡月明课题组",
                     "start_time": "2025年",
-                    "next_plan": "完成免疫细胞分析，探究关键通路分子",
-                    "data_spec": "• 文件按 日期_患者编号_检测类型 命名<br>            • 每周三备份至课题组云盘<br>            • 患者临床信息匿名化处理，严格保密"
+                    "research_content": "围绕抗MDA5+皮肌炎相关间质性肺病，解析免疫细胞失衡、单核-巨噬细胞动态转化及干扰素信号通路异常，挖掘诊疗标志物。",
+                    "cell_marker_link": "https://pan.baidu.com/s/183EB-VMgmspOj_NOog3lBQ",
+                    "literature_link": "https://pan.baidu.com/s/1bNwFLGickvwNl-JNGTrxEg?pwd=qjdp",
+                    "next_plan": "建立临床队列，开展流式细胞分型与单细胞测序分析",
+                    "data_spec": "• 细胞分型严格参照网盘Marker标准<br>            • 临床样本严格保密、去标识化使用<br>            • 课题研究统一依据文献库进展"
                 },
                 {
                     "id": "topic2",
-                    "name": "类风湿关节炎免疫调控研究",
-                    "progress": "动物模型构建完成，待检测",
-                    "person_in_charge": "李四",
-                    "start_time": "2025年",
-                    "next_plan": "完成检测数据分析，开始药物干预实验",
-                    "data_spec": "• 按动物/细胞数据分类存储<br>            • 每日备份实验数据<br>            • 绑定动物编号，避免混淆"
-                },
-                {
-                    "id": "topic3",
-                    "name": "单细胞多组学分析",
-                    "progress": "数据已下机，正在分析",
-                    "person_in_charge": "王五",
-                    "start_time": "2025年",
-                    "next_plan": "完成数据分析，准备初稿撰写",
-                    "data_spec": "• 原始数据/结果/脚本分文件夹存储<br>            • 数据下机后立即双备份<br>            • 注释脚本版本和参数"
-                },
-                {
-                    "id": "topic4",
-                    "name": "天然免疫与炎症信号通路",
-                    "progress": "Western 实验验证中",
-                    "person_in_charge": "赵六",
-                    "start_time": "2025年",
-                    "next_plan": "完成WB验证，开始信号通路机制探究",
-                    "data_spec": "• 原始图片禁止修改<br>            • 24小时内备份实验数据<br>            • 保留至少3次重复原始数据"
-                },
-                {
-                    "id": "topic5",
-                    "name": "临床转化与药物靶点研究",
-                    "progress": "小分子筛选进行中",
-                    "person_in_charge": "钱七",
-                    "start_time": "2025年",
-                    "next_plan": "完成筛选，验证候选药物效果",
-                    "data_spec": "• 记录药物浓度和抑制率<br>            • 每周备份筛选数据<br>            • 标注药物信息，避免混淆"
+                    "name": "抗MDA5抗体阳性皮肌炎相关间质性肺病患者感染发生率的Meta分析",
+                    "progress": "已完成初步查重与候选文献初筛，待老师确认题目",
+                    "person_in_charge": "蔡月明课题组",
+                    "start_time": "2026年",
+                    "research_content": "以王虹丽DM/PM-RP-ILD系统综述与Meta分析为主要方法模板，围绕抗MDA5抗体阳性皮肌炎相关间质性肺病患者的感染相关结局开展系统综述与比例Meta分析。",
+                    "template_reference": "主要参考DM/PM-RP-ILD Meta文章的方法框架；SLE肠道菌群文章用于参考自身免疫病选题思路和Introduction写法。",
+                    "outcomes": "总感染发生率、CMV再激活率、PJP/PCP发生率、真菌/曲霉感染率、严重感染率、感染相关死亡率。",
+                    "next_plan": "等待老师确认题目后，整理PROSPERO注册方案，开展正式数据库检索、文献筛选、全文下载、数据提取和R软件比例Meta分析。",
+                    "data_spec": "• 避免与已注册治疗策略Meta方向重复<br>            • 提取每篇研究的事件人数和总人数<br>            • 记录检索来源、纳排理由、质量评价和统计分析过程"
                 }
             ]
         }
@@ -106,9 +88,9 @@ class ProjectUpdater:
             f.write(index_content)
         
         # 更新每个课题的详情页
-        for i, topic in enumerate(topics_data['topics']):
+        for topic in topics_data['topics']:
             topic_content = self.generate_topic_html(topic)
-            with open(self.topic_files[i], 'w', encoding='utf-8') as f:
+            with open(f'{topic["id"]}.html', 'w', encoding='utf-8') as f:
                 f.write(topic_content)
         
         print("HTML文件已更新")
@@ -144,23 +126,40 @@ class ProjectUpdater:
     
     def generate_topic_html(self, topic):
         """生成单个课题详情页内容"""
-        # 为第一个课题（皮肌炎）添加特殊处理，包含网盘链接
-        if topic["id"] == "topic1":
-            extra_content = f'''
-        <div class="line"><span class="label">研究内容：</span>{topic.get("research_content", "")}</div>
+        extra_parts = []
 
+        if topic.get("research_content"):
+            extra_parts.append(f'''
+        <div class="line"><span class="label">研究内容：</span>{topic.get("research_content", "")}</div>
+''')
+
+        if topic.get("template_reference"):
+            extra_parts.append(f'''
+        <div class="line"><span class="label">模板参考：</span>{topic.get("template_reference", "")}</div>
+''')
+
+        if topic.get("outcomes"):
+            extra_parts.append(f'''
+        <div class="line"><span class="label">主要结局：</span>{topic.get("outcomes", "")}</div>
+''')
+
+        if topic.get("cell_marker_link"):
+            extra_parts.append(f'''
         <div class="line" style="margin-top:20px">
             <span class="label">细胞Marker库：</span>
             <a href="{topic.get("cell_marker_link", "")}" target="_blank" class="link">点击打开网盘（提取码：ame9）</a>
         </div>
+''')
 
+        if topic.get("literature_link"):
+            extra_parts.append(f'''
         <div class="line">
             <span class="label">课题参考文献：</span>
             <a href="{topic.get("literature_link", "")}" target="_blank" class="link">点击打开网盘（提取码：qjdp）</a>
         </div>
- '''
-        else:
-            extra_content = ""
+''')
+
+        extra_content = "".join(extra_parts)
         
         html_content = f"""<!DOCTYPE html>
 <html lang="zh-CN">
