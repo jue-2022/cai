@@ -4,9 +4,13 @@
 这是一个专为蔡月明课题组设计的内部管理平台，采用独立页面设计，每个课题有单独的详情页面。
 
 ## 当前文件结构
-- index.html - 抗MDA5+皮肌炎免疫致病机制研究总览页面
+- index.html - 平台首页（在研课题 + 研究成果/在研论文项目）
 - topic1.html - 抗MDA5+皮肌炎免疫致病机制研究详情
 - topic2.html - 抗MDA5抗体阳性皮肌炎相关间质性肺病患者感染发生率的Meta分析详情
+- paper1.html - 抗MDA5+皮肌炎机会性感染系统评价与Meta分析
+- paper2.html - IIM-ILD 系统评价伞形综述
+- paper3.html - 抗MDA5+皮肌炎ILD与预后系统综述与Meta分析
+- paper4.html - 各肌炎特异性抗体表型间ILD风险比较
 - topics_data.json - 课题数据文件
 - update_topics.py - 课题信息更新脚本
 - PROJECT_STRUCTURE.md - 项目结构说明
